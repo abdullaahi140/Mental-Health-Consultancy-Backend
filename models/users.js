@@ -28,6 +28,14 @@ exports.getByUsername = async function getByUsername(username) {
 };
 
 /**
+ * Function that retrieves all the staff names.
+ * @returns {Array<Object>} -Array of staffs with their first name and last names
+ */
+exports.getAllStaff = async function getAllStaff() {
+	return knex.from('users').select('ID', 'firstName', 'lastName').where({ role: 'staff' });
+};
+
+/**
  * Function that adds user to the database.
  * @param {Object} user - Object with user's information
  * @returns {Array} - Array with ID's of users added
