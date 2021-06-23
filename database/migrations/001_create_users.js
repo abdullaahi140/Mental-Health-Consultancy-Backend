@@ -1,5 +1,5 @@
 /**
- * A module to create and delete the users table from the database
+ * A module to create and delete from the users table in the database
  * @module migrations/001_create_users
  * @author Abdullaahi Farah
  * @see migrations/* for other database migration files
