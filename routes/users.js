@@ -28,6 +28,15 @@ async function getById(ctx) {
 }
 
 /**
+ * Route that retrieves all staff names from the database
+ * @param {Object} ctx - The Koa request/response context object
+ */
+async function getAllStaff(ctx) {
+	const staff = await model.getAllStaff();
+	ctx.body = staff;
+}
+
+/**
  * Route that gets all users from the database
  * @param {Object} ctx - The Koa request/response context object
  */
@@ -64,6 +73,7 @@ async function createUser(ctx) {
 const router = Router({ prefix: '/api/v1/users' });
 
 router.post('/', bodyParser(), createUser);
+router.get('/staff', auth, getAllStaff);
 router.get('/:ID([0-9]{1,})', auth, getById);
 
 module.exports = router;
