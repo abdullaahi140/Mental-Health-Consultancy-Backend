@@ -30,6 +30,14 @@ exports.seed = async function seed(knex) {
 		role: 'staff'
 	});
 
+	const staff2 = await hashPassword({
+		firstName: 'Another',
+		lastName: 'Staff',
+		username: 'staff2',
+		password: 'password',
+		role: 'staff'
+	});
+
 	const user = await hashPassword({
 		firstName: 'Example',
 		lastName: 'User',
@@ -41,5 +49,5 @@ exports.seed = async function seed(knex) {
 	// Deletes ALL existing entries
 	return knex('users').del()
 		// Inserts seed entries
-		.then(() => knex('users').insert([admin, staff, user]));
+		.then(() => knex('users').insert([admin, staff, staff2, user]));
 };
