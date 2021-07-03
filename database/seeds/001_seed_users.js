@@ -23,16 +23,16 @@ exports.seed = async function seed(knex) {
 	});
 
 	const staff = await hashPassword({
-		firstName: 'Staff',
-		lastName: 'User',
+		firstName: 'James',
+		lastName: 'Johnson',
 		username: 'staff',
 		password: 'password',
 		role: 'staff'
 	});
 
 	const staff2 = await hashPassword({
-		firstName: 'Another',
-		lastName: 'Staff',
+		firstName: 'Sarah',
+		lastName: 'Palmer',
 		username: 'staff2',
 		password: 'password',
 		role: 'staff'
