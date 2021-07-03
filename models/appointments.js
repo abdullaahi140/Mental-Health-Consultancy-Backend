@@ -13,7 +13,10 @@ const { knex } = require('../database/knex.js');
  * @returns All appointments for that date
  */
 exports.getByDate = async function getByDate(date) {
-	return knex.from('appointment').select('*').where({ date });
+	return knex.from('appointment')
+		.select('*')
+		.where({ date })
+		.orderBy('startTime');
 };
 
 /**
@@ -27,7 +30,8 @@ exports.getByDateAndStaff = async function getByDateAndStaff(date, staffID) {
 	return knex.from('appointment')
 		.select('users.firstName', 'users.lastName', 'appointment.*')
 		.leftJoin('users', 'users.ID', 'appointment.userID')
-		.where({ date, staffID });
+		.where({ date, staffID })
+		.orderBy('startTime');
 };
 
 /**
