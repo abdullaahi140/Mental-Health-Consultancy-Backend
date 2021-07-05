@@ -2,7 +2,7 @@
 
 This project uses Node, NPM and MySQL. Ensure both are installed.
 
-For the database, create a database named 6001CEM in MySQL. The backend uses this to store and retrieve data.
+For the database, create a database named "6001CEM" in MySQL. The backend uses this to store and retrieve data.
 
 To install all of the project's dependencies, run `npm install`
 
