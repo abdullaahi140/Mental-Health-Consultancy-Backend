@@ -40,5 +40,8 @@ module.exports = {
 		seeds: {
 			directory: `${__dirname}/seeds`
 		}
+	},
+	production: {
+		connection: process.env.process.DB_URL
 	}
 };
