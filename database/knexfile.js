@@ -43,7 +43,7 @@ module.exports = {
 	},
 	production: {
 		client: 'mysql2',
-		connection: process.env.process.DB_URL,
+		connection: process.env.DB_URL,
 		migrations: {
 			directory: `${__dirname}/migrations`
 		},
