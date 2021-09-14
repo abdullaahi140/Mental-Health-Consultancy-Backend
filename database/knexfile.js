@@ -42,6 +42,13 @@ module.exports = {
 		}
 	},
 	production: {
-		connection: process.env.process.DB_URL
+		client: 'mysql2',
+		connection: process.env.process.DB_URL,
+		migrations: {
+			directory: `${__dirname}/migrations`
+		},
+		seeds: {
+			directory: `${__dirname}/seeds`
+		}
 	}
 };
